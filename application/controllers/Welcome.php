@@ -22,4 +22,18 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+        
+        public function teste()
+        {
+            $data['postagens'] = $this->db->get('postagens')->result();
+            $this->load->view('postagens',$data);
+        }
+        
+        public function detalhes($id)
+        {
+            $this->db->where('id',$id);
+            $data['postagem'] = $this->db->get('postagens')->result();
+            $data['postagens'] = $this->db->get('postagens')->result();
+            $this->load->view('detalhes_postagem',$data);
+        }
 }
