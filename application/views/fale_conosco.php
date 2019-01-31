@@ -15,6 +15,7 @@ and open the template in the editor.
         anchor(base_url("fale-conosco", "Fale Conosco")) .
         heading("Meu Blog", 2) .
         heading("Fale Conosco", 3);
+       echo validation_errors();
         $atributos = array('name' => 'formulario_contato', 'id' => 'formulario_contato');
         echo form_open(base_url('welcome/enviar_mensagem'), $atributos) .
         form_label("Nome:", "txt_nome") . br() .
