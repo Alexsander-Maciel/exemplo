@@ -42,9 +42,9 @@ class Welcome extends CI_Controller {
 
     public function enviar_mensagem() {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('txt_nome', 'Email', 'required');
+        $this->form_validation->set_rules('txt_nome', 'Nome', 'required');
         $this->form_validation->set_rules('txt_email', 'Email', 'required/valid_email');
-        $this->form_validation->set_rules('txt_mensagem', 'Email', 'required');
+        $this->form_validation->set_rules('txt_mensagem', 'Mensagem', 'required');
         if ($this->form_validation->run()) {
             $mensagem = "Nome:" . $this->input->post('txt_nome') . br();
             $mensagem = "E-mail:" . $this->input->post('txt_email') . br();
